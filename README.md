@@ -76,17 +76,7 @@ Imagine uma curva crescente. Pegando o valor da função na esquerda do interval
 
 $$
 Sesq=∑i=0n−1f(a+iΔx)⋅Δx
-S
-esq
-	​
-
-=
-i=0
-∑
-n−1
-	​
-
-f(a+iΔx)⋅Δx
+Sesq=i=0∑n−1f(a+iΔx)⋅Δx
 $$
 
 ```c
@@ -145,9 +135,11 @@ double right_riemann_sum(double (*f)(double), double a, double b, int n)
 Escolhe-se **o ponto central de cada subintervalo**. Normalmente dá uma aproximação mais **precisa** do que as somas pela esquerda ou direita. Minimiza os erros de subestimação e superestimação, pois o ponto médio tende a equilibrar a diferença entre retângulo e área real da curva.
 
 **Fórmula:**
+
 $$
 Smid=∑i=1nf(a+(i−12)Δx)⋅ΔxS_{\text{mid}} = \sum_{i=1}^{n} f\Big(a + \big(i - \frac{1}{2}\big)\Delta x\Big) \cdot \Delta xSmid​=i=1∑n​f(a+(i−21​)Δx)⋅Δx
 $$
+
 Para funções suaves, o retângulo central tende a representar a área real com mais fidelidade. A fórmula parece bem complicada, mas na prática basta calcular o valor da base de cada retângulo e somar meio, isso é, dividir por dois.
 
 ```c
